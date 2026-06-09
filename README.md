@@ -33,7 +33,7 @@
 pip install sled
 
 # Или из репозитория
-git clone https://github.com/yourname/sled
+git clone https://github.com/dankertea51-cpu/sled
 cd sled && pip install -e .
 
 # Расследование email

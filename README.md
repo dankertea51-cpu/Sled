@@ -315,7 +315,7 @@ paste_dump_found, role_based_email, plus_tagged, short_local_part
 pip install sled
 
 # Локально
-git clone https://github.com/yourname/sled
+git clone https://github.com/dankertea51-cpu/sled
 cd sled
 pip install -e .
 

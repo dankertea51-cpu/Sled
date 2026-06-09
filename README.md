@@ -37,20 +37,20 @@ git clone https://github.com/dankertea51-cpu/sled
 cd sled && pip install -e .
 
 # Расследование email
-sled investigate email test@example.com
+python -m sled investigate email test@example.com
 
 # Расследование username
-sled investigate username torvalds
+python -m sled investigate username torvalds
 
 # Расследование телефона
-sled investigate phone "+79123456789"
+python -m sled investigate phone "+79123456789"
 
 # Криптокошелёк
-sled investigate crypto 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa
+python -m sled investigate crypto 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa
 
 # Сохранить результат и сгенерировать отчёт
-sled investigate email user@gmail.com -o case.json
-sled report case-001 case.json -f md
+python -m sled investigate email user@gmail.com -o case.json
+python -m sled report case-001 case.json -f md
 ```
 
 ---
@@ -58,7 +58,7 @@ sled report case-001 case.json -f md
 ## Пример работы
 
 ```bash
-$ sled investigate email admin@company.com
+$ python -m sled investigate email admin@company.com
 
 ┌──────────────────────────────────────────────┐
 │  Расследование: email = admin@company.com     │
@@ -197,7 +197,7 @@ Bandcamp, Chess.com, Codecademy, Coursera, Wikipedia, Habr, Pikabu, Boosty и д
 ## Phone
 
 ```bash
-sled investigate phone "+79123456789"
+python -m sled investigate phone "+79123456789"
 ```
 
 **Определение региона РФ**:
@@ -240,19 +240,19 @@ sled investigate crypto 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa
 
 ```bash
 # Расследование
-sled investigate <type> <value> [options]
+python -m sled investigate <type> <value> [options]
 
 # Отчёт
-sled report <case_id> <input.json> -f md|html|pdf|json
+python -m sled report <case_id> <input.json> -f md|html|pdf|json
 
 # Список трансформаций
-sled list-transforms [--module email]
+python -m sled list-transforms [--module email]
 
 # Анализ графа
-sled analyze-graph input.json
+python -m sled analyze-graph input.json
 
 # Конфигурация
-sled config
+python -m sled config
 ```
 
 **Опции investigate**:
@@ -325,6 +325,9 @@ pip install -r requirements.txt
 # Запуск тестов
 pytest tests/ -v
 ```
+
+Запуск команд через `python -m sled <command>` (работает всегда).
+Если установлено через `pip install`, можно использовать `sled <command>` напрямую.
 
 **Python**: 3.11+
 
